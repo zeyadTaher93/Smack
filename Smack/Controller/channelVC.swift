@@ -11,6 +11,7 @@ import UIKit
 class channelVC: UIViewController {
 
     @IBOutlet weak var loginBtn: UIButton!
+    @IBAction func prepareForUnWind(segue : UIStoryboardSegue){}
     override func viewDidLoad() {
         super.viewDidLoad()
 

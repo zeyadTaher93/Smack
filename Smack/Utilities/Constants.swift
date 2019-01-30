@@ -7,6 +7,23 @@
 //
 
 import Foundation
+
+typealias ComplitionHandler = (_ Success : Bool) -> ()
+
+// URL constants
+
+let BASE_URL = "https://smack-chat-app-zeyad.herokuapp.com/v1/"
+let URL_REGISTER = "\(BASE_URL)account/register"
+
+
 //segues
 
 let TO_LOGIN = "toLoginVC"
+let TO_SIGNUP = "toSignUpVC"
+let UNWIND_TO_CHANNEL = "unWindTochannel"
+
+//user defaults
+
+let TOKEN_KEY = "token"
+let LOGGED_IN_KEY = "LoggedIn"
+let USER_EMAIL = "userEmail"
