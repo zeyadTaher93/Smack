@@ -21,6 +21,7 @@
 		F11443E121FFB7DA00238600 /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11443E021FFB7DA00238600 /* signUpVC.swift */; };
 		F11443E4220216D200238600 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11443E3220216D200238600 /* AuthService.swift */; };
 		F1F5C985220253C2003278A7 /* roundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F5C984220253C2003278A7 /* roundedCorner.swift */; };
+		F1F5C98722032E70003278A7 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F5C98622032E70003278A7 /* UserDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		F11443E021FFB7DA00238600 /* signUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
 		F11443E3220216D200238600 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F1F5C984220253C2003278A7 /* roundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedCorner.swift; sourceTree = "<group>"; };
+		F1F5C98622032E70003278A7 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				F11443E3220216D200238600 /* AuthService.swift */,
+				F1F5C98622032E70003278A7 /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				F11443E121FFB7DA00238600 /* signUpVC.swift in Sources */,
 				F11443D721FE1E6300238600 /* channelVC.swift in Sources */,
 				F11443BB21FE043E00238600 /* AppDelegate.swift in Sources */,
+				F1F5C98722032E70003278A7 /* UserDataService.swift in Sources */,
 				F11443E4220216D200238600 /* AuthService.swift in Sources */,
 				F11443D921FF613600238600 /* gradientLayer.swift in Sources */,
 				F11443DF21FF97ED00238600 /* loginVC.swift in Sources */,
