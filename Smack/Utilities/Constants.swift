@@ -17,11 +17,16 @@ let URL_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
 let URL_USER_ADD = "\(BASE_URL)user/add"
 
+//notification
+
+let NOTI_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+
 //segues
 
 let TO_LOGIN = "toLoginVC"
 let TO_SIGNUP = "toSignUpVC"
 let UNWIND_TO_CHANNEL = "unWindTochannel"
+let TO_AVATAR_PICKER = "toAvatarPicker"
 
 //user defaults
 
