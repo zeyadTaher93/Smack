@@ -108,7 +108,7 @@
                                 <rect key="frame" x="281" y="82" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nPo-Q2-XcF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nPo-Q2-XcF" customClass="cornerImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="16" y="577" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="JRn-x2-DIo"/>
@@ -178,6 +178,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="yoN-AR-HXW" id="hPx-5z-zcC"/>
+                        <outlet property="userImage" destination="nPo-Q2-XcF" id="oEj-Q2-CBI"/>
                         <segue destination="w2G-ua-Dmd" kind="show" identifier="toLoginVC" id="kzL-3n-D1M"/>
                     </connections>
                 </viewController>

@@ -15,6 +15,7 @@ class UserDataService {
    public private(set) var avatarName = ""
    public private(set) var name = ""
    public private(set) var email = ""
+   public private(set) var bg = UIColor.lightGray
     
     func setUserData(id: String , avatarColor: String , avatarName: String , name: String , email: String){
         self.id = id
@@ -28,4 +29,8 @@ class UserDataService {
         self.avatarName = avatarName
     }
     
+    
+    func setBGcolor(bg: UIColor){
+        self.bg = bg
+    }
 }

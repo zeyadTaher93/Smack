@@ -140,6 +140,13 @@ class AuthService {
         
     }
     
+    func logoutUser(){
+        self.isLoggedIn = false
+        self.authToken = ""
+        self.UserEmail = ""
+        UserDataService.instance.setUserData(id: "", avatarColor: "", avatarName: "", name: "", email: "")
+        UserDataService.instance.setBGcolor(bg: UIColor.clear)
+    }
     
     
     
