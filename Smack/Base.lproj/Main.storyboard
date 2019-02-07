@@ -128,7 +128,7 @@
                                 <rect key="frame" x="0.0" y="124" width="375" height="433"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aLA-lg-8Q2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" id="aLA-lg-8Q2" customClass="channelCell" customModule="Smack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aLA-lg-8Q2" id="4N4-qC-rhi">
@@ -148,6 +148,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="channelNameLbl" destination="1z2-Kt-MF9" id="z2c-Qr-trm"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -177,6 +180,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="channelTableView" destination="hL2-aG-dbO" id="cxI-Jn-QTm"/>
                         <outlet property="loginBtn" destination="yoN-AR-HXW" id="hPx-5z-zcC"/>
                         <outlet property="userImage" destination="nPo-Q2-XcF" id="oEj-Q2-CBI"/>
                         <segue destination="w2G-ua-Dmd" kind="show" identifier="toLoginVC" id="kzL-3n-D1M"/>
@@ -283,6 +287,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="w2G-ua-Dmd" eventType="touchUpInside" id="yHC-Uk-K9M"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U53-Dc-YH2">
                                 <rect key="frame" x="70.5" y="371" width="234" height="30"/>
@@ -296,11 +303,16 @@
                                     <action selector="signUpBtnPressed:" destination="w2G-ua-Dmd" eventType="touchUpInside" id="vfC-3M-ucN"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="bIw-NY-nqP">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.2901960784" green="0.30196078430000001" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CQm-A3-APB" firstAttribute="centerX" secondItem="F3s-kT-JGY" secondAttribute="centerX" id="0Q0-wZ-Syb"/>
                             <constraint firstItem="CQm-A3-APB" firstAttribute="top" secondItem="9OB-ZC-opI" secondAttribute="bottom" constant="40" id="64m-BE-1gF"/>
+                            <constraint firstItem="bIw-NY-nqP" firstAttribute="centerX" secondItem="F3s-kT-JGY" secondAttribute="centerX" id="9C3-HL-dgf"/>
                             <constraint firstItem="U53-Dc-YH2" firstAttribute="centerX" secondItem="F3s-kT-JGY" secondAttribute="centerX" id="F55-gF-wFI"/>
                             <constraint firstItem="9OB-ZC-opI" firstAttribute="centerX" secondItem="F3s-kT-JGY" secondAttribute="centerX" id="GAS-Js-jWH"/>
                             <constraint firstItem="Ady-kx-0PD" firstAttribute="top" secondItem="J23-zc-O9c" secondAttribute="bottom" id="IG3-7W-J92"/>
@@ -309,9 +321,13 @@
                             <constraint firstItem="8Lg-75-grg" firstAttribute="centerX" secondItem="F3s-kT-JGY" secondAttribute="centerX" id="Yl5-vy-uH0"/>
                             <constraint firstItem="9OB-ZC-opI" firstAttribute="top" secondItem="J23-zc-O9c" secondAttribute="bottom" constant="75" id="nEU-wx-FPv"/>
                             <constraint firstItem="U53-Dc-YH2" firstAttribute="top" secondItem="8Lg-75-grg" secondAttribute="bottom" id="oG0-cD-wHz"/>
+                            <constraint firstItem="bIw-NY-nqP" firstAttribute="centerY" secondItem="F3s-kT-JGY" secondAttribute="centerY" constant="-100" id="tXG-ia-XNo"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="passwordTxtField" destination="p9M-M3-hcy" id="iPc-aH-L8B"/>
+                        <outlet property="spinner" destination="bIw-NY-nqP" id="ohW-aH-PJc"/>
+                        <outlet property="userNameTxt" destination="Eh3-Kj-tty" id="fbu-wl-YJq"/>
                         <segue destination="UgM-GF-MVR" kind="show" identifier="toSignUpVC" id="ung-hK-Urm"/>
                     </connections>
                 </viewController>

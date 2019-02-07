@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3668E599DD1110D5E64CD816 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCDCC7D0E4474B2F0F4F830 /* Pods_Smack.framework */; };
+		C9ED0912220C494B00157FA9 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED0911220C494B00157FA9 /* MessageService.swift */; };
+		C9ED0917220C4F6D00157FA9 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED0916220C4F6D00157FA9 /* Channel.swift */; };
+		C9ED0919220C73A000157FA9 /* channelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED0918220C73A000157FA9 /* channelCell.swift */; };
 		F11443BB21FE043E00238600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11443BA21FE043E00238600 /* AppDelegate.swift */; };
 		F11443C021FE043E00238600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11443BE21FE043E00238600 /* Main.storyboard */; };
 		F11443C221FE044300238600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F11443C121FE044300238600 /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 		3F9A9016FFC400BE5D2CB6A2 /* Pods-Smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.release.xcconfig"; sourceTree = "<group>"; };
 		5CC73A6E6B9DD39B4DE16CD5 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 		6BCDCC7D0E4474B2F0F4F830 /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9ED0911220C494B00157FA9 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		C9ED0916220C4F6D00157FA9 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		C9ED0918220C73A000157FA9 /* channelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = channelCell.swift; sourceTree = "<group>"; };
 		F11443B721FE043E00238600 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11443BA21FE043E00238600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F11443BF21FE043E00238600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +84,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C9ED0915220C4F4B00157FA9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9ED0916220C4F6D00157FA9 /* Channel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E6D08D796B261938A3D7B40F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +125,7 @@
 				F11443E22202169700238600 /* Services */,
 				F11443DB21FF8FE600238600 /* Utilities */,
 				F11443CC21FE0B7800238600 /* Supporting Files */,
-				F11443D321FE1E2B00238600 /* Model */,
+				C9ED0915220C4F4B00157FA9 /* Model */,
 				F11443D221FE1E2200238600 /* View */,
 				F11443D121FE1E0E00238600 /* Controller */,
 				F11443BA21FE043E00238600 /* AppDelegate.swift */,
@@ -154,15 +168,9 @@
 				F1F5C984220253C2003278A7 /* roundedCorner.swift */,
 				F1F5C98A2205F049003278A7 /* avatarPickerCell.swift */,
 				F1C2C4752206244300A68FC1 /* cornerImage.swift */,
+				C9ED0918220C73A000157FA9 /* channelCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F11443D321FE1E2B00238600 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		F11443DB21FF8FE600238600 /* Utilities */ = {
@@ -178,6 +186,7 @@
 			children = (
 				F11443E3220216D200238600 /* AuthService.swift */,
 				F1F5C98622032E70003278A7 /* UserDataService.swift */,
+				C9ED0911220C494B00157FA9 /* MessageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -314,7 +323,9 @@
 				F1F5C9892205EC80003278A7 /* avatarPickerVC.swift in Sources */,
 				F11443D721FE1E6300238600 /* channelVC.swift in Sources */,
 				F11443BB21FE043E00238600 /* AppDelegate.swift in Sources */,
+				C9ED0917220C4F6D00157FA9 /* Channel.swift in Sources */,
 				F1F5C98722032E70003278A7 /* UserDataService.swift in Sources */,
+				C9ED0912220C494B00157FA9 /* MessageService.swift in Sources */,
 				F11443E4220216D200238600 /* AuthService.swift in Sources */,
 				F11443D921FF613600238600 /* gradientLayer.swift in Sources */,
 				F11443DF21FF97ED00238600 /* loginVC.swift in Sources */,
@@ -325,6 +336,7 @@
 				F1F5C985220253C2003278A7 /* roundedCorner.swift in Sources */,
 				F1C2C4792207463900A68FC1 /* profileViewVC.swift in Sources */,
 				F11443DD21FF900B00238600 /* Constants.swift in Sources */,
+				C9ED0919220C73A000157FA9 /* channelCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

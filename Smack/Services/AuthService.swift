@@ -149,6 +149,41 @@ class AuthService {
     }
     
     
+    func findUserByEmail(completion: @escaping ComplitionHandler){
+        
+        let header = [
+            "Authorization": "Bearer \(AuthService.instance.authToken)" ,
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+        
+        Alamofire.request("\(URL_FIND_USER_BY_EMAIL)\(UserEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            if response.result.error == nil {
+                
+                guard let data = response.data  else {return}
+                self.setUpUserInfo(data: data)
+                
+                completion(true)
+                
+            }else{
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+        
+    }
+    func setUpUserInfo(data: Data){
+        let json = try!  JSON(data: data)
+        
+        let id = json["_id"].stringValue
+        let avatarColor = json["avatarColor"].stringValue
+        let avatarName = json["avatarName"].stringValue
+        let email = json["email"].stringValue
+        let name = json["name"].stringValue
+        UserDataService.instance.setUserData(id: id, avatarColor: avatarColor, avatarName: avatarName, name: name, email: email)
+        
+    }
+    
+    
     
     
     

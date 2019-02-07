@@ -9,11 +9,15 @@
 import UIKit
 
 class loginVC: UIViewController {
-
+    //outlets
+    @IBOutlet weak var userNameTxt: UITextField!
+    @IBOutlet weak var passwordTxtField: UITextField!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpView()
     }
     
     @IBAction func closeBtnPressed(_ sender: Any) {
@@ -25,14 +29,29 @@ class loginVC: UIViewController {
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func loginBtnPressed(_ sender: Any) {
+         spinner.isHidden = false
+         spinner.startAnimating()
+         guard let name = userNameTxt.text , userNameTxt.text != "" else {return}
+        
+         guard let password = passwordTxtField.text , passwordTxtField.text != "" else {return}
+        
+        AuthService.instance.logInUser(email: name, password: password) { (success) in
+            if success {
+                AuthService.instance.findUserByEmail(completion: { (success) in
+                    if success {
+                         NotificationCenter.default.post(name: NOTI_USER_DATA_DID_CHANGE, object: nil)
+                        self.spinner.isHidden = true
+                        self.spinner.stopAnimating()
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
+            }
+        }
     }
-    */
+    
+    func setUpView(){
+        spinner.isHidden = true
+    }
 
 }
