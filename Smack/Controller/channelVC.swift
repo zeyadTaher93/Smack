@@ -16,12 +16,14 @@ class channelVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var userImage: UIImageView!
     @IBAction func prepareForUnWind(segue : UIStoryboardSegue){}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         channelTableView.delegate = self
         channelTableView.dataSource = self
         self.revealViewController()!.rearViewRevealWidth = self.view.frame.size.width - 60
         NotificationCenter.default.addObserver(self, selector: #selector(userDataChanged(_:)), name: NOTI_USER_DATA_DID_CHANGE, object: nil)
+        channelTableView.reloadData()
     }
    
     
@@ -29,6 +31,11 @@ class channelVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
         setUserInfo()
     }
     
+    @IBAction func addChannelBtnPressed(_ sender: Any) {
+        let addChannel = addChannelVC()
+        addChannel.modalPresentationStyle = .custom
+        present(addChannel, animated: true, completion: nil)
+    }
     @IBAction func loginBtnPressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
             let profile = profileViewVC()
@@ -51,6 +58,7 @@ class channelVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
             userImage.image  = UIImage(named: "menuProfileIcon")
             userImage.backgroundColor = UIColor.clear
         }
+
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -60,6 +68,7 @@ class channelVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MessageService.instance.channels.count
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "channelCell", for: indexPath) as? channelCell {
@@ -70,6 +79,4 @@ class channelVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
             return UITableViewCell()
         }
     }
-   
-
 }
