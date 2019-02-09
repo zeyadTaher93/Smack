@@ -146,6 +146,7 @@ class AuthService {
         self.UserEmail = ""
         UserDataService.instance.setUserData(id: "", avatarColor: "", avatarName: "", name: "", email: "")
         UserDataService.instance.setBGcolor(bg: UIColor.clear)
+        MessageService.instance.clearChannels()
     }
     
     

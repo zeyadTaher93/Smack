@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3668E599DD1110D5E64CD816 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCDCC7D0E4474B2F0F4F830 /* Pods_Smack.framework */; };
+		C90D9E2D220DF6260069919C /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90D9E2C220DF6260069919C /* SocketService.swift */; };
 		C9575009220DAB0800D0F923 /* addChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9575007220DAB0800D0F923 /* addChannelVC.swift */; };
 		C957500A220DAB0800D0F923 /* addChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9575008220DAB0800D0F923 /* addChannelVC.xib */; };
 		C9ED0912220C494B00157FA9 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED0911220C494B00157FA9 /* MessageService.swift */; };
@@ -38,6 +39,7 @@
 		3F9A9016FFC400BE5D2CB6A2 /* Pods-Smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.release.xcconfig"; sourceTree = "<group>"; };
 		5CC73A6E6B9DD39B4DE16CD5 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 		6BCDCC7D0E4474B2F0F4F830 /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90D9E2C220DF6260069919C /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		C9575007220DAB0800D0F923 /* addChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addChannelVC.swift; sourceTree = "<group>"; };
 		C9575008220DAB0800D0F923 /* addChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addChannelVC.xib; sourceTree = "<group>"; };
 		C9ED0911220C494B00157FA9 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				F11443E3220216D200238600 /* AuthService.swift */,
 				F1F5C98622032E70003278A7 /* UserDataService.swift */,
 				C9ED0911220C494B00157FA9 /* MessageService.swift */,
+				C90D9E2C220DF6260069919C /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90D9E2D220DF6260069919C /* SocketService.swift in Sources */,
 				F11443E121FFB7DA00238600 /* signUpVC.swift in Sources */,
 				F1F5C9892205EC80003278A7 /* avatarPickerVC.swift in Sources */,
 				F11443D721FE1E6300238600 /* channelVC.swift in Sources */,

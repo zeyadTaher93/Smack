@@ -80,6 +80,7 @@
                     </view>
                     <connections>
                         <outlet property="sideMenuBtn" destination="XJP-oi-IjN" id="z2s-eY-mrn"/>
+                        <outlet property="smackLbl" destination="5gb-m4-xng" id="oRJ-N6-m0A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPq-Rc-SDb" userLabel="First Responder" sceneMemberID="firstResponder"/>

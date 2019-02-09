@@ -22,6 +22,8 @@ let URL_GET_CHANNELS = "\(BASE_URL)channel"
 //notification
 
 let NOTI_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+let NOTI_CHANNELS_LOADED = Notification.Name("channelsLoaded")
+let NOTI_CHANNELS_SELECTED = Notification.Name("channelSelected")
 
 //segues
 

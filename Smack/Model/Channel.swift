@@ -15,4 +15,5 @@ struct Channel {
     public private(set) var channelDescription: String!
     
     
+    
 }
