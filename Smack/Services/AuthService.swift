@@ -43,6 +43,9 @@ class AuthService {
         }
     }
     
+    
+    
+    
     func registerUser(email: String , password: String  , completion: @escaping ComplitionHandler ){
         
         let lowerCasedEmail = email.lowercased()
@@ -147,6 +150,7 @@ class AuthService {
         UserDataService.instance.setUserData(id: "", avatarColor: "", avatarName: "", name: "", email: "")
         UserDataService.instance.setBGcolor(bg: UIColor.clear)
         MessageService.instance.clearChannels()
+        MessageService.instance.clearMessages()
     }
     
     

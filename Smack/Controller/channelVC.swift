@@ -30,6 +30,7 @@ class channelVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
             }else{
             }
         }
+        
     }
    
     @objc func channelsLoaded(_ notif: Notification){
