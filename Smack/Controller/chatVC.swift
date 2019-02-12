@@ -18,16 +18,20 @@ class chatVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
     @IBOutlet weak var smackLbl: UILabel!
     @IBOutlet weak var messageTxt: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sendBtn: UIButton!
     
-    
+    var isTyping = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.bindToKeyboard()
+        
         tableView.delegate = self
         tableView.dataSource  = self
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
+        
+        sendBtn.isHidden = true
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         view.addGestureRecognizer(tap)
@@ -64,13 +68,24 @@ class chatVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
         view.endEditing(true)
     }
     
+    @IBAction func messageBoxEditing(_ sender: Any) {
+        if messageTxt.text == "" {
+        isTyping = false
+        sendBtn.isHidden = true
+        }else{
+           
+            sendBtn.isHidden = false
+            isTyping = true
+            
+        }
+    }
     
     @IBAction func sendMessageBtnPressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
             guard let channelId = MessageService.instance.selectedChannel?.channelID else{return}
             guard let messageBody = messageTxt.text else {return}
             
-            
+            sendBtn.isHidden = true
             
             SocketService.instance.addMessage(messageBody: messageBody, userId: UserDataService.instance.id, channelId: channelId) { (success) in
                 self.messageTxt.text = ""

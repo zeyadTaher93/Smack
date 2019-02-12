@@ -66,7 +66,8 @@ class channelVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
         if AuthService.instance.isLoggedIn {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImage.image = UIImage(named: UserDataService.instance.avatarName)
-            userImage.backgroundColor = UserDataService.instance.bg
+//            userImage.backgroundColor = UserDataService.instance.bg
+            userImage.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
             channelTableView.reloadData()
             
         }else{

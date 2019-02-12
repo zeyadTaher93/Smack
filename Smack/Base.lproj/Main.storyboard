@@ -54,8 +54,8 @@
                                         </constraints>
                                         <state key="normal" image="smackBurger"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gb-m4-xng">
-                                        <rect key="frame" x="161" y="46" width="53" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Login !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gb-m4-xng">
+                                        <rect key="frame" x="134" y="46" width="107" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -78,6 +78,9 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="messageBoxEditing:" destination="zAw-bu-yQe" eventType="editingChanged" id="2AN-Yb-oli"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y68-mj-1du">
                                 <rect key="frame" x="337" y="632" width="30" height="30"/>
@@ -165,6 +168,7 @@
                     </view>
                     <connections>
                         <outlet property="messageTxt" destination="5ac-uX-gxe" id="BVg-Bt-xBD"/>
+                        <outlet property="sendBtn" destination="Y68-mj-1du" id="k19-SB-2O4"/>
                         <outlet property="sideMenuBtn" destination="XJP-oi-IjN" id="z2s-eY-mrn"/>
                         <outlet property="smackLbl" destination="5gb-m4-xng" id="oRJ-N6-m0A"/>
                         <outlet property="tableView" destination="jhQ-ka-reQ" id="gmG-CD-GDu"/>

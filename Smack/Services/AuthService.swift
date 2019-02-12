@@ -148,7 +148,7 @@ class AuthService {
         self.authToken = ""
         self.UserEmail = ""
         UserDataService.instance.setUserData(id: "", avatarColor: "", avatarName: "", name: "", email: "")
-        UserDataService.instance.setBGcolor(bg: UIColor.clear)
+        
         MessageService.instance.clearChannels()
         MessageService.instance.clearMessages()
     }

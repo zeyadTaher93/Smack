@@ -29,7 +29,7 @@ class profileViewVC: UIViewController {
         nameLbl.text = UserDataService.instance.name
         emailLbl.text = UserDataService.instance.email
         profileImg.image = UIImage(named: UserDataService.instance.avatarName)
-        profileImg.backgroundColor = UserDataService.instance.bg
+        profileImg.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapHandling))
         view.addGestureRecognizer(tap)
