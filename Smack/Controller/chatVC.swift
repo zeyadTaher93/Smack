@@ -54,7 +54,7 @@ class chatVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
         }
         
         
-        if AuthService.instance.isLoggedIn {
+        if AuthService.instance.isLoggedIn && AuthService.instance.authToken != "" {
             AuthService.instance.findUserByEmail { (success) in
                 if success {
                     NotificationCenter.default.post(name: NOTI_USER_DATA_DID_CHANGE, object: nil)
